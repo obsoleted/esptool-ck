@@ -40,6 +40,7 @@ unsigned int total_size = 0;
 
 int binimage_add_segment(uint32_t address, uint32_t size, unsigned char *data)
 {
+    LOGINFO("+binimage_add_segment(address=0x%08X, size=%d", address, size);
     if(!data)
     {
         LOGERR("no data for binimage segment #%i", b_image.num_segments);
@@ -82,6 +83,7 @@ int binimage_add_segment(uint32_t address, uint32_t size, unsigned char *data)
 
 int binimage_prepare(const char *fname, uint32_t entry)
 {
+    LOGINFO("+binimage_prepare(fname=%s, entry=%d", fname, entry);
     if(b_image.image_file)
     {
         return 0;
@@ -120,6 +122,7 @@ void bimage_set_entry(uint32_t entry)
 
 int binimage_write(uint32_t padsize, bool close)
 {
+    LOGINFO("+binimage_write(padsize=%d, close=%s)", padsize, close ? "true": "false");
     unsigned int cnt, cnt2;
     unsigned char chksum;
     
@@ -221,11 +224,13 @@ int binimage_write(uint32_t padsize, bool close)
 
 int binimage_write_close(uint32_t padsize)
 {
+    LOGINFO("+binimage_write_close(padsize=%d)", padsize);
     return binimage_write(padsize, true);
 }
 
 int binimage_write_padto(uint32_t padsize, uint32_t address)
 {
+    LOGINFO("+binimage_write_padto(padsize=%d, address=0x08X", padsize, address);
     if (binimage_write(padsize, false) == 0)
         return 0;
 
@@ -259,6 +264,7 @@ const char* binimage_flash_freq_to_str(unsigned char freq);
 
 int binimage_set_flash_mode(const char* modestr)
 {
+    LOGINFO("+binimage_set_flash_mode(modestr=%s)", modestr);
     unsigned char mode = binimage_parse_flash_mode(modestr);
     if (mode == INVALID_VAL)
     {
@@ -276,6 +282,7 @@ int binimage_set_flash_mode(const char* modestr)
 
 int binimage_set_flash_size(const char* sizestr)
 {
+    LOGINFO("+binimage_set_flash_size(sizestr=%s)", sizestr);
     unsigned char size = binimage_parse_flash_size(sizestr);
     if (size == INVALID_VAL)
     {
@@ -293,6 +300,7 @@ int binimage_set_flash_size(const char* sizestr)
 
 int binimage_set_flash_freq(const char* freqstr)
 {
+    LOGINFO("+binimage_set_flash_freq(freqstr=%s)", freqstr);
     unsigned char freq = binimage_parse_flash_freq(freqstr);
     if (freq == INVALID_VAL)
     {
@@ -313,6 +321,7 @@ static const char* flash_size_str[] = {"512K", "256K", "1M", "2M", "4M", "8M", "
 
 unsigned char binimage_parse_flash_mode(const char* str)
 {
+    LOGINFO("+binimage_parse_flash_mode(str=%s)", str);
     const int n = sizeof(flash_mode_str)/sizeof(const char*);
     for (int i = 0; i < n; ++i) 
     {
@@ -326,6 +335,7 @@ unsigned char binimage_parse_flash_mode(const char* str)
 
 unsigned char binimage_parse_flash_size(const char* str)
 {
+    LOGINFO("+binimage_parse_flash_size(str=%s)",str);
     const int n = sizeof(flash_size_str)/sizeof(const char*);
     for (int i = 0; i < n; ++i) 
     {
@@ -339,6 +349,7 @@ unsigned char binimage_parse_flash_size(const char* str)
 
 unsigned char binimage_parse_flash_freq(const char* str)
 {
+    LOGINFO("+binimage_parse_flash_freq(str=%s)",str);
     int val = atoi(str);
     switch (val) 
     {
@@ -352,6 +363,7 @@ unsigned char binimage_parse_flash_freq(const char* str)
 
 const char* binimage_flash_mode_to_str(unsigned char mode)
 {
+    LOGINFO("+binimage_flash_mode_to_str(mode=%d)", mode);
     if (mode > FLASH_MODE_DOUT)
         return "";
 
@@ -360,6 +372,7 @@ const char* binimage_flash_mode_to_str(unsigned char mode)
 
 const char* binimage_flash_size_to_str(unsigned char size)
 {
+    LOGINFO("+binimage_flash_size_to_str(size=%d)", size);
     if ((size >> 4) > FLASH_SIZE_32M)
         return "";
     return flash_size_str[size >> 4];
@@ -367,6 +380,7 @@ const char* binimage_flash_size_to_str(unsigned char size)
 
 const char* binimage_flash_freq_to_str(unsigned char freq)
 {
+    LOGINFO("+binimage_flash_freq_to_str(freq=%d)",freq);
     switch (freq)
     {
         case FLASH_FREQ_40: return "40";
