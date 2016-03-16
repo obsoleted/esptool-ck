@@ -1,0 +1,70 @@
+esptool v0.4.8-1-g64af4a0 - (c) 2014 Ch. Klippel <ck@atelier-klippel.de>
+using ELF file "eboot.elf"
+	ELF header OK
+	loading string table from ELF file
+	building ELF section list
+	ELF section list created: 14 entries
++binimage_prepare(fname=simplesample_httpasdfsdfsdfs.ino.bin, entry=1074852416
+created structure for binimage "simplesample_httpasdfsdfsdfs.ino.bin" with entry address 0x4010F240
++binimage_set_flash_mode(modestr=qio)
++binimage_parse_flash_mode(str=qio)
++binimage_flash_mode_to_str(mode=0)
++binimage_flash_mode_to_str(mode=0)
+setting flash mode from qio to qio
++binimage_set_flash_freq(freqstr=40)
++binimage_parse_flash_freq(str=40)
++binimage_flash_freq_to_str(freq=0)
++binimage_flash_freq_to_str(freq=0)
+setting flash frequency from 40 to 40
++binimage_set_flash_size(sizestr=512K)
++binimage_parse_flash_size(str=512K)
++binimage_flash_size_to_str(size=0)
++binimage_flash_size_to_str(size=0)
+setting flash size from 512K to 512K
++binimage_add_segment(address=0x4010F000, size=1264
+added segment #0 to binimage for address 0x4010F000 with size 0x000004F0
+added section .text at 0x4010F000 size 0x000004F0
+set bimage entry to 0x4010F240
++binimage_write_padto(padsize=16, address=0x08X
++binimage_write(padsize=16, close=false)
+saved binimage file, total size is 1296 bytes, checksum byte is 0x42
+	releasing memory used for segment 0 in binimage
+	releasing memory used for binimage segment pointers
+	binimage_write_padto: total:510 addr:1000
+	releasing memory from ELF file stringtable
+	releasing memory from ELF file section info
+	closing ELF file
+using ELF file "simplesample_httpasdfsdfsdfs.ino.elf"
+	ELF header OK
+	loading string table from ELF file
+	building ELF section list
+	ELF section list created: 56 entries
++binimage_add_segment(address=0x40201010, size=305424
+added segment #0 to binimage for address 0x40201010 with size 0x0004A910
+added section .irom0.text at 0x40201010 size 0x0004A90E with padding 0x00000002
+set bimage entry to 0x40100004
++binimage_add_segment(address=0x40100000, size=29520
+added segment #1 to binimage for address 0x40100000 with size 0x00007350
+added section .text at 0x40100000 size 0x0000734D with padding 0x00000003
+set bimage entry to 0x40100004
++binimage_add_segment(address=0x3FFE8000, size=1568
+added segment #2 to binimage for address 0x3FFE8000 with size 0x00000620
+added section .data at 0x3FFE8000 size 0x00000620
+set bimage entry to 0x40100004
++binimage_add_segment(address=0x3FFE8620, size=16704
+added segment #3 to binimage for address 0x3FFE8620 with size 0x00004140
+added section .rodata at 0x3FFE8620 size 0x00004140
+set bimage entry to 0x40100004
++binimage_write_close(padsize=16)
++binimage_write(padsize=16, close=true)
+saved binimage file, total size is 353264 bytes, checksum byte is 0x20
+	releasing memory used for segment 0 in binimage
+	releasing memory used for segment 1 in binimage
+	releasing memory used for segment 2 in binimage
+	releasing memory used for segment 3 in binimage
+	releasing memory used for binimage segment pointers
+	releasing memory from ELF file stringtable
+	releasing memory from ELF file section info
+	closing ELF file
++binimage_write_close(padsize=16)
++binimage_write(padsize=16, close=true)
