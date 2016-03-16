@@ -49,7 +49,7 @@ int main(int argc, char **argv)
         LOGERR("No arguments given. Use -h for help.");
         return 0;
     }
-	infohelper_set_infolevel(3);
+	infohelper_set_infolevel(10);
     infohelper_set_argverbosity(num_args, arg_ptr);
 
     LOGINFO("esptool v" VERSION " - (c) 2014 Ch. Klippel <ck@atelier-klippel.de>");

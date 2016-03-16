@@ -1,6 +1,19 @@
-esptool v0.4.8-1-g64af4a0 - (c) 2014 Ch. Klippel <ck@atelier-klippel.de>
+esptool v0.4.8-2-g4ccc87a - (c) 2014 Ch. Klippel <ck@atelier-klippel.de>
 using ELF file "eboot.elf"
 	ELF header OK
+		e_type      : 0x0002
+		e_machine   : 0x005E
+		e_version   : 0x00000001
+		e_entry     : 0x4010F240
+		e_phoff     : 0x00000034
+		e_shoff     : 0x00001C68
+		e_flags     : 0x00000300
+		e_ehsize    : 0x0034
+		e_phentsize : 0x0020
+		e_phnum     : 0x0005
+		e_shentsize : 0x0028
+		e_shnum     : 0x000F
+		e_shstrndx  : 0x000C
 	loading string table from ELF file
 	building ELF section list
 	ELF section list created: 14 entries
@@ -21,6 +34,18 @@ setting flash frequency from 40 to 40
 +binimage_flash_size_to_str(size=0)
 +binimage_flash_size_to_str(size=0)
 setting flash size from 512K to 512K
+		found section .text at index 1
+		section name    : .text
+		sh_name         : 0x0000001B
+		sh_type         : 0x00000001
+		sh_flags        : 0x00000006
+		sh_addr         : 0x4010F000
+		sh_offset       : 0x000000D4
+		sh_size         : 0x000004F0
+		sh_link         : 0x00000000
+		sh_info         : 0x00000000
+		sh_addralign    : 0x00000004
+		sh_entsize      : 0x00000000
 +binimage_add_segment(address=0x4010F000, size=1264
 added segment #0 to binimage for address 0x4010F000 with size 0x000004F0
 added section .text at 0x4010F000 size 0x000004F0
@@ -36,21 +61,84 @@ saved binimage file, total size is 1296 bytes, checksum byte is 0x42
 	closing ELF file
 using ELF file "simplesample_httpasdfsdfsdfs.ino.elf"
 	ELF header OK
+		e_type      : 0x0002
+		e_machine   : 0x005E
+		e_version   : 0x00000001
+		e_entry     : 0x40100004
+		e_phoff     : 0x00000034
+		e_shoff     : 0x00190410
+		e_flags     : 0x00000300
+		e_ehsize    : 0x0034
+		e_phentsize : 0x0020
+		e_phnum     : 0x0005
+		e_shentsize : 0x0028
+		e_shnum     : 0x0039
+		e_shstrndx  : 0x0036
 	loading string table from ELF file
 	building ELF section list
 	ELF section list created: 56 entries
+		found section .irom0.text at index 4
+		section name    : .irom0.text
+		sh_name         : 0x0000002E
+		sh_type         : 0x00000001
+		sh_flags        : 0x00000006
+		sh_addr         : 0x40201010
+		sh_offset       : 0x0000BB90
+		sh_size         : 0x0004A90E
+		sh_link         : 0x00000000
+		sh_info         : 0x00000000
+		sh_addralign    : 0x00000010
+		sh_entsize      : 0x00000000
+		padding section #4 binary data (size 0x0004A90E) with 2 bytes
 +binimage_add_segment(address=0x40201010, size=305424
 added segment #0 to binimage for address 0x40201010 with size 0x0004A910
 added section .irom0.text at 0x40201010 size 0x0004A90E with padding 0x00000002
 set bimage entry to 0x40100004
+		found section .text at index 5
+		section name    : .text
+		sh_name         : 0x00000034
+		sh_type         : 0x00000001
+		sh_flags        : 0x00000006
+		sh_addr         : 0x40100000
+		sh_offset       : 0x00004840
+		sh_size         : 0x0000734D
+		sh_link         : 0x00000000
+		sh_info         : 0x00000000
+		sh_addralign    : 0x00000004
+		sh_entsize      : 0x00000000
+		padding section #5 binary data (size 0x0000734D) with 3 bytes
 +binimage_add_segment(address=0x40100000, size=29520
 added segment #1 to binimage for address 0x40100000 with size 0x00007350
 added section .text at 0x40100000 size 0x0000734D with padding 0x00000003
 set bimage entry to 0x40100004
+		found section .data at index 1
+		section name    : .data
+		sh_name         : 0x0000001B
+		sh_type         : 0x00000001
+		sh_flags        : 0x00000003
+		sh_addr         : 0x3FFE8000
+		sh_offset       : 0x000000E0
+		sh_size         : 0x00000620
+		sh_link         : 0x00000000
+		sh_info         : 0x00000000
+		sh_addralign    : 0x00000010
+		sh_entsize      : 0x00000000
 +binimage_add_segment(address=0x3FFE8000, size=1568
 added segment #2 to binimage for address 0x3FFE8000 with size 0x00000620
 added section .data at 0x3FFE8000 size 0x00000620
 set bimage entry to 0x40100004
+		found section .rodata at index 2
+		section name    : .rodata
+		sh_name         : 0x00000021
+		sh_type         : 0x00000001
+		sh_flags        : 0x00000003
+		sh_addr         : 0x3FFE8620
+		sh_offset       : 0x00000700
+		sh_size         : 0x00004140
+		sh_link         : 0x00000000
+		sh_info         : 0x00000000
+		sh_addralign    : 0x00000010
+		sh_entsize      : 0x00000000
 +binimage_add_segment(address=0x3FFE8620, size=16704
 added segment #3 to binimage for address 0x3FFE8620 with size 0x00004140
 added section .rodata at 0x3FFE8620 size 0x00004140
