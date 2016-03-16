@@ -1,0 +1,16 @@
+/Users/obsoleted/Library/Arduino15/packages/esp8266/hardware/esp8266/2.1.0/bootloaders/eboot/eboot.elf  :
+section          size         addr
+.text            1264   1074851840
+.debug_frame      360            0
+.debug_info      1492            0
+.debug_abbrev     609            0
+.debug_aranges     64            0
+.debug_line      1523            0
+.debug_str        748            0
+.comment           33            0
+.xtensa.info       56            0
+.xt.lit            16            0
+.xt.prop          744            0
+Total            6909
+
+
